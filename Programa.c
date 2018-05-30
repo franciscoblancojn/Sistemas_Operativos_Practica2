@@ -1,5 +1,5 @@
 
-#include <stido.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 
@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 		printf("2)Listado de Procesos\n");
 		printf("3)Matar Proceso\n");
 		printf("4)Salir\n");
-		fscanf("%i",&opcion);
+		scanf("%i",&opcion);
 		if(opcion==1){
 		}else if(opcion==2){
 
