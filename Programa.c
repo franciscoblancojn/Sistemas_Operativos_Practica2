@@ -4,7 +4,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-
+void Listado_de_Procesos();
 int main(int argc, char const *argv[])
 {
 	int opcion=-1;
@@ -29,4 +29,7 @@ int main(int argc, char const *argv[])
 
 
 	return 0;
+}
+void Listado_de_Procesos(){
+	
 }
