@@ -41,6 +41,7 @@ int main(int argc, char const *argv[])
 void Ejecutar_Proceso(){
 	char comando[100]="", aux='1';
 	int sw=0;
+	system("clear");
 	printf("Introdusca en comando a usar\n");
 	fflush(stdin);
 	do{
@@ -54,11 +55,8 @@ void Ejecutar_Proceso(){
 	comando[strlen(comando)]=' ';
 	comando[strlen(comando)]='&';
 	sw = system(comando);
-		if(sw!=-1 && sw!=127){
-			printf("Comando ejecutado en segundo plano correctamente\n");
-		}else{
-			printf("Ocurrio un error al ejecutar el comando\n");
-		}
+	printf("Presione 'Enter' para continuar\n");
+	while ( getchar() != '\n');
 }
 void Listado_de_Procesos(){
 }
