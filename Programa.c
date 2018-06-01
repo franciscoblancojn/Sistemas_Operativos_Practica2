@@ -165,5 +165,13 @@ void Listado_de_Procesos(){
 
 }
 void Matar_Proceso(){
-
+	while ( getchar() != '\n');
+	char pid[10], comando[20];
+	printf("Introdusca PID del Proceso a eliminar\n");
+	scanf("%s",pid);
+	strcpy(comando,"kill ");
+	strcat(comando,pid);
+	system(comando);
+	printf("Presione 'Enter' para continuar\n");
+	while ( getchar() != '\n');
 }
