@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <string.h>
 
 void Ejecutar_Proceso();
 void Listado_de_Procesos();
@@ -12,6 +13,7 @@ int main(int argc, char const *argv[])
 	int opcion=-1;
 
 	do{
+		fflush(stdin);
 		printf("MENU\n");
 		printf("1)Ejecutar Proceso\n");
 		printf("2)Listado de Procesos\n");
@@ -36,7 +38,26 @@ int main(int argc, char const *argv[])
 	return 0;
 }
 void Ejecutar_Proceso(){
+	char comando[100]="", aux='1';
+	int sw=0;
+	printf("Introdusca en comando a usar\n");
+	fflush(stdin);
+	do{
+		scanf("%c",&aux);
+		if(aux!='\n'){
+			comando[strlen(comando)]=aux;
+		}
+		sw++;
+	}while(aux!='\n' || sw<2);
 
+	comando[strlen(comando)]=' ';
+	comando[strlen(comando)]='&';
+	sw = system(comando);
+		if(sw!=-1 && sw!=127){
+			printf("Comando ejecutado en segundo plano correctamente\n");
+		}else{
+			printf("Ocurrio un error al ejecutar el comando\n");
+		}
 }
 void Listado_de_Procesos(){
 }
